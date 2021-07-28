@@ -1,0 +1,8 @@
+Pages -
+    Home - Documentation, Collections
+    Login
+    Add Sparekey
+    Inward Sparekey
+    Reports
+    Settings => Add, Delete Field Officers, Change Default Days,
+            For Administrators => Add, Delete, Active, Inactive users

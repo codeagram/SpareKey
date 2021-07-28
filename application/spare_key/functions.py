@@ -1,5 +1,5 @@
 from application import db
-from application.spare_key.models import SpareKeyDB
+from application.spare_key.models import SpareKeyDB, FieldOfficers
 
 
 class SpareKeyCRUD:
@@ -25,4 +25,27 @@ class SpareKeyCRUD:
 
     def get_all_keys(self):
 
-        pass
+        all_keys = SpareKeyDB.query.all()
+
+        db.session.close()
+
+        return all_keys
+
+
+def get_recepients():
+
+    recepients = FieldOfficers.name.query.all()
+
+    db.cession.close()
+
+    return recepients
+
+
+def get_recepients_tuple(recepients):
+
+    recepients_tuple = list()
+
+    for name in recepients:
+        recepients_tuple.append((name, name))
+
+    return recepients_tuple

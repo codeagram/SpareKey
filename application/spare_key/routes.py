@@ -1,10 +1,16 @@
-from . import SpareKey
+from . import SpareKeyBP
 from flask import render_template, redirect
 from .forms import AddSpareKey
 from .functions import SpareKeyCRUD
 
 
-@SpareKey.route("/documentation", methods=["GET", "POST"])
+@SpareKeyBP.route("/")
+def index():
+
+    return render_template("index.html")
+
+
+@SpareKeyBP.route("/documentation", methods=["GET", "POST"])
 def documentation():
 
     form = AddSpareKey()
@@ -23,7 +29,7 @@ def documentation():
     return render_template("documentation.html", form=form)
 
 
-@SpareKey.route("/collections")
+@SpareKeyBP.route("/collections")
 def collections():
 
     form = AddSpareKey()
@@ -31,7 +37,7 @@ def collections():
     return render_template("collections.html", form=form)
 
 
-@SpareKey.route("/SpareKeyAdmin")
+@SpareKeyBP.route("/SpareKeyAdmin")
 def spare_key_admin():
 
     return render_template("spare_key_admin.html")

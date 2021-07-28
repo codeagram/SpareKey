@@ -18,7 +18,13 @@ else:
 with app.app_context():
 
     db = SQLAlchemy(app)
+
+
     from application.spare_key import SpareKey
-    app.register_blueprint(SpareKey)
+    from application.auth import AuthBP
+
+
+    app.register_blueprint(SpareKeyBP)
+    app.register_blueprint(AuthBP
 
     db.create_all()

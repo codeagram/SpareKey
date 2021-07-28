@@ -14,3 +14,10 @@ class SpareKeyDB(db.Model):
     return_date = db.Column(db.Date)
     Expected_date = db.Column(db.Date)
     remarks = db.Column(db.String(100))
+
+
+class FieldOfficers(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(32), unique=True)
+    is_active = db.Column(db.Boolean, default=True)
